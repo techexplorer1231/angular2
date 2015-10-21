@@ -2,20 +2,20 @@ import {Component, View} from 'angular2/angular2';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {RouteConfig, Router, RouterOutlet} from 'angular2/router';
 
-import {DashboardComponent} from './components/dashboard.component';
-import {CharacterComponent} from './components/character.component';
+import {DashboardComponent} from './containers/Dashboard/dashboard.component';
+import {CharacterComponent} from './containers/Character/character.component';
 
 @Component({ selector: 'app' })
 @View({
   template: `
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar">
           <div class="navbar-header">
             <a class="navbar-brand" [router-link]="['./Dashboard']">Kart</a>
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li><a [router-link]="['./Dashboard']">Dashboard</a></li>
-              <li><a [router-link]="['./Character']">Character</a></li>
+              <li><a [router-link]="['./Dashboard']" class="router-link">Dashboard</a></li>
+              <li><a [router-link]="['./Character']" class="router-link">Character</a></li>
             </ul>
           </div>
         </nav>
@@ -23,7 +23,12 @@ import {CharacterComponent} from './components/character.component';
           <router-outlet></router-outlet>
         </div>
     `,
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  styles: [`
+      .router-link:visited, .router-link:link {color: #444;}
+      .router-link:hover {color: white; background-color: #1171a3; text-decoration: none;}
+      .router-link.router-link-active {color: white; background-color: #52b9e9; text-decoration: none;}
+    `]
 })
 @RouteConfig([
   {
@@ -37,5 +42,4 @@ import {CharacterComponent} from './components/character.component';
     component: CharacterComponent
   }
 ])
-export class App {
-}
+export class App { }
