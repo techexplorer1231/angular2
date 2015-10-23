@@ -1,4 +1,4 @@
-/// <reference path="../../node_modules/immutable/dist/immutable.d.ts" />
+
 import {Component, View} from 'angular2/angular2';
 import {Map} from "immutable";
 
