@@ -7,6 +7,8 @@ import {bootstrap, FORM_PROVIDERS, ELEMENT_PROBE_PROVIDERS} from 'angular2/angul
 import {ROUTER_PROVIDERS} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
+import {MainService} from './main.service';
+
 /*
  * App Component
  * our top level component that holds all of our components
@@ -22,5 +24,7 @@ bootstrap(App, [
   FORM_PROVIDERS,
   ROUTER_PROVIDERS,
   HTTP_PROVIDERS,
-  ELEMENT_PROBE_PROVIDERS
+  ELEMENT_PROBE_PROVIDERS,
+  // these are service dependencies
+  MainService
 ]);
